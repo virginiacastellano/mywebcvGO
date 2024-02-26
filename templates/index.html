@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Web CV</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #f7a1de, #5bf7d8);
+            /* Fondo con degradado */
+            color: rgb(8, 8, 8);
+        }
+
+        .jumbotron {
+            background: transparent;
+            /* Jumbotron sin fondo */
+            position: relative;
+            /* Añade posición relativa para posicionar la imagen absolutamente */
+            overflow: hidden;
+            /* Oculta cualquier contenido que se desborde */
+        }
+
+
+
+        .profile-img {
+            width: 150px;
+            /* Ajusta el tamaño de la imagen según tus necesidades */
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            /* Agrega transición al efecto de transformación */
+        }
+
+        .profile-img:hover {
+            transform: scale(1.2);
+            /* Hace que la imagen se agrande al pasar el mouse */
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            /* Fondo de tarjeta semi-transparente */
+            margin: 10px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra de tarjeta */
+            transition: transform 0.3s;
+            /* Agrega transición al efecto de transformación */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            /* Hace que la tarjeta se agrande al pasar el mouse */
+        }
+
+        .card-header {
+            background: #ff7e5f;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            /* Bordes redondeados en la parte superior de la tarjeta */
+        }
+
+        .card-title {
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #feb47b;
+            border-color: #feb47b;
+        }
+
+        /* Estilo para el fondo animado */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #f2ae9d, #ec9b5d, #7bf2f0);
+            z-index: -1;
+            animation: animateBackground 20s linear infinite;
+            /* Agrega animación al fondo */
+        }
+
+        @keyframes animateBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <!-- Agregando la imagen de perfil con la ruta relativa -->
+            <img src="../static/vir.jpg" alt="Imagen de perfil" class="profile-img float-left mr-3">
+
+            <!-- Agregando efectos al título y al texto -->
+            <h1 class="display-4 d-inline">MI CURRICULUM</h1>
+            <p class="lead d-inline">¡Hola! Soy {{.Name}}, una {{.Skills}} de {{.Age}} años. Bienvenidos/as a mi CV.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Estudios</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Tecnicatura Universitaria en Programación - Universidad Tecnológica Nacional</p>
+                        <p>Desarrollo Full Stack Python - Fundación educativa de la Santísima Trinidad</p>
+                        <p>Desarrollo Full Stack - Fundación Telefónica</p>
+                        <p>Marketing Digital - Egg</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Experiencia Laboral</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>IDUS (2023): Desarrolladora Python.</p>
+                        <p>Municipio - Desarrolladora (2021-2022): Creación de bases de datos, diseño de interfaz
+                            gráfica,
+                            configuración de entornos y documentación.</p>
+                        <p>Municipio - Secretaría (2020): Área de Administración Pública.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Sobre Mí</h5>
+            </div>
+            <div class="card-body">
+                <p>Soy una apasionada programadora en constante búsqueda de desafíos para impulsar mi crecimiento profesional.
+                    Destaco por mi capacidad para adaptarme rápidamente a los cambios y absorber nuevos conocimientos de
+                    manera eficaz. La empatía es mi brújula, lo que me permite crear soluciones tecnológicas que transforman
+                    de manera positiva la experiencia del usuario.</p>
+    
+                <!-- Habilidades y Herramientas -->
+                <h6>Habilidades:</h6>
+                <p>CSS3 | Java | JavaScript | PHP | HTML5 | Bootstrap |</p>
+    
+                <h6>Herramientas de Software:</h6>
+                <p>Django | Flask | FastAPI | Android | MongoDB |</p>
+                <p>MySQL | SQLite | MariaDB | Figma | GitHub | golang</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Contacto</h5>
+            </div>
+            <div class="card-body">
+                <p>+54 9 2634225932</p>
+                <p>vcastellano140@gmail.com</p>
+                <p>Ciudad de Mendoza</p>
+                <a href="https://www.linkedin.com/in/virginia-castellano/" class="btn btn-primary">LinkedIn</a>
+                <a href="https://github.com/virginiacastellano/" class="btn btn-primary">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-pzjw8f+ua/CfSo6Z8Cy5S5P4PbSLZLl9RMFNw/emA1pXAvmi1N6Pw5QcgJZ9t7ab"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.3/dist/js/bootstrap.min.js"
+        integrity="sha384-bt1iOOioytdqJO5eZBAAdeDEuUPa1iA+dC5d9AjQmqon+c4W/1eHVQEHfdlNBQ8q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
